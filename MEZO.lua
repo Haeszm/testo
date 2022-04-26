@@ -4865,7 +4865,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 end
 
 ---زخرفة ----
-if Redis:get(TheMEZO.."zhrfa"..msg.sender.user_id) == "sendzh" then
+if Redis:get(MEZO.."zhrfa"..msg.sender.user_id) == "sendzh" then
 zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
 zx = JSON.decode(zh)
 t = "\n* ✧ قائمه الزخرفه ⇧⇩*\n*⩹┉┉┉┉⊶❲𖥳 𝙏𝙃𝙊𝙍 𓅔 𖥳❳⊷┉┉┉┉⩺*\n* أضغط علي الاسم لا يتم النسخ ✧ *\n"
@@ -4875,11 +4875,11 @@ i = i + 1
 t = t..i.."- "..v.." \n"
 end
 LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
-Redis:del(TheMEZO.."zhrfa"..msg.sender.user_id) 
+Redis:del(MEZO.."zhrfa"..msg.sender.user_id) 
 end
 if text == "زخرفه" or text == "زخرفة" then
 LuaTele.sendText(msg_chat_id,msg_id,"* ✧ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
-Redis:set(TheMEZO.."zhrfa"..msg.sender.user_id,"sendzh") 
+Redis:set(MEZO.."zhrfa"..msg.sender.user_id,"sendzh") 
 end
 if text and text:match("^زخرفه (.*)$") then
 local TextZhrfa = text:match("^زخرفه (.*)$")
@@ -12528,7 +12528,7 @@ name = string.gsub(name,"ايطاليا","🇮🇹")
 name = string.gsub(name,"تركيا","🇹🇷")
 name = string.gsub(name,"البرتغال","🇵🇹")
 name = string.gsub(name,"المكسيك","🇲🇽")
-name = string.gsub(name,"سويسرا","🇨🇭")
+name = string.gsub(name,"سويسرا","🇨??")
 name = string.gsub(name,"كرواتيا","🇭🇷")
 name = string.gsub(name,"السودان","🇸🇩")
 name = string.gsub(name,"الكاميرون","🇨🇲")
@@ -13190,7 +13190,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[*
 return false
 end
 
-if text=="📣 اذاعه بالتثبيت 📣" then 
+if text=="📣 اذاعه بالتثبيت ??" then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ❍┃ هاذا الامر يخص⟦ '..Controller_Num(2)..' ⟧* ',"md",true)  
 end
